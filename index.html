@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Blog Website</title>
+</head>
+<body>
+    <!-- Header -->    
+    <header>
+        <div>
+        <h1>MENS FASHION</h1>
+        </div>
+        <span class="menu-toggle">&#9776;</span>
+        <nav>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#create blog">Create Blog</a></li>
+        </nav> 
+    </header>
+    <main>
+    <section>
+        <button class="toggle-btn" onclick="toggleDarkMode()">Mode</button>
+    </section>
+    <section>
+    <!--home Section-->
+        <div class="banner-slider" id = "home">
+            <div class="slider">
+                <div class="slide" style="background-image: url('Image1.png');"></div>
+                <div class="slide" style="background-image: url('Image2.png');"></div>
+                <div class="slide" style="background-image: url('Image3.png');"></div>
+            </div>    
+            <div class="overlay">
+                <img src="logo.png" alt="MENS FASHION Logo" class="logo">
+                <p class="tagline">New Outerwear Collection</p>
+                <input type="text" placeholder="Search Blog" class="search-box">
+            </div>
+        </div>
+    </section> 
+    <!--About Section-->
+    <section>
+    <h1>OUR LATEST BLOG</h1>
+        <div class="blog-container" id = "about">
+            <div class="blog-card">
+                <img src="Image4.png" alt="Blog Image" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-title">Winter Fashion Trends 2025</div>
+                    <div class="blog-description">Stay ahead in style with the latest winter fashion trends. From cozy layers to bold statement pieces, explore what’s trending this season!</div>
+                    <div class="blog-meta">Mohd Shami | February 20, 2025</div>
+                    <button class="read-more" onclick="openBlog('blog1')">Read More</button>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="Image5.png" alt="Blog Image" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-title">Streetwear Revolution: Style That Speaks</div>
+                    <div class="blog-description">Dive into the world of urban fashion! Discover how streetwear has transformed over the years and why it’s ruling the style scene.</div>
+                    <div class="blog-meta">Mohd Siraj | February 18, 2025</div>
+                    <button class="read-more" onclick="openBlog('blog2')">Read More</button>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="Image6.png" alt="Blog Image" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-title">Classic vs. Modern: The New Men's Wardrobe</div>
+                    <div class="blog-description">Balancing timeless elegance with modern aesthetics—find out how to upgrade your wardrobe with the perfect mix of classic and trendy pieces.</div>
+                    <div class="blog-meta">Rohit Sharma | February 19, 2025</div>
+                    <button class="read-more" onclick="openBlog('blog3')">Read More</button>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="Image7.png" alt="Blog Image" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-title">The Art of Layering: Elevate Your Look</div>
+                    <div class="blog-description">Master the technique of layering like a pro! Learn how to mix textures, colors, and fabrics to create a stylish and comfortable outfit.</div>
+                    <div class="blog-meta">Virat Kohli | February 18, 2025</div>
+                    <button class="read-more" onclick="openBlog('blog4')">Read More</button>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="Image8.png" alt="Blog Image" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-title">Essential Accessories for the Modern Gentleman</div>
+                    <div class="blog-description">From statement watches to versatile scarves—unlock the secrets of accessories that add the perfect finishing touch to any outfit.</div>
+                    <div class="blog-meta">Shahrukh khan | February 17, 2025</div>
+                    <button class="read-more" onclick="openBlog('blog5')">Read More</button>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="Image9.png" alt="Blog Image" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-title">Summer Outfit Guide: Cool & Confident</div>
+                    <div class="blog-description">Beat the heat in style! Check out the best lightweight fabrics, colors, and outfit ideas to keep you looking sharp all summer long.</div>
+                    <div class="blog-meta">Salman Khan | February 20, 2025</div>
+                    <button class="read-more" onclick="openBlog('blog6')">Read More</button>
+                </div>
+            </div>
+        </div>  
+    <div id="full-blog-page" class="full-blog">
+        <div class="full-blog-content">
+            <span class="close-btn" onclick="closeBlog()">&times;</span>
+            <img id="full-blog-image" src="" alt="Blog Image">
+            <h1 id="full-blog-title"></h1>
+            <p id="full-blog-meta"></p>
+            <p id="full-blog-text"></p>
+        </div>
+    </div>
+    </section>
+    <!-- create blog-->
+     <Section>
+        <div class="container" id = "create blog">
+            <div class="form-box">
+                <h2>Create a Blog</h2>
+                <form id="blogForm">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" placeholder="Enter blog title" required>
+    
+                    <label for="description">Short Description:</label>
+                    <input type="text" id="description" placeholder="Enter a short description" required>
+    
+                    <label for="imageUpload">Upload Image:</label>
+                    <input type="file" id="imageUpload" accept="image/*">
+                    <img id="preview" class="preview" style="display: none;">
+    
+                    <label for="category">Select Category:</label>
+                    <select id="category" required>
+                        <option value="">Choose a category</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Food">Food</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Lifestyle">Lifestyle</option>
+                        <option value="Education">Education</option>
+                    </select>
+    
+                    <label for="content">Content:</label>
+                    <textarea id="content" rows="5" placeholder="Write your blog content here..." required></textarea>
+    
+                    <button type="submit">Publish Blog</button>
+                </form>
+            </div>
+        </div>
+     </Section>
+    </main>
+    <!-- footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="logo.png" alt="MENS FASHION Logo">
+                <p>Your go-to source for the latest men's fashion trends.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#create blog">Create Blog</a></li>
+                    <li><a href="#single blog">Single Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Subscribe</h3>
+                <p>Get the latest fashion trends delivered to your inbox.</p>
+                <input type="email" placeholder="Enter your email" id="email">
+                <button onclick="subscribeNewsletter()">Subscribe</button>
+                <p id="subscription-message"></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MENS FASHION. All rights reserved.</p>
+        </div>
+    </footer>    
+    <script src="script.js"></script>       
+</body>
+</html>
+
